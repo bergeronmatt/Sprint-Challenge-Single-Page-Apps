@@ -27,7 +27,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Some of the benefits to client-side routing include downloading less data to display new content. We can reuse DOM elements, display loading notifications
+            to the user, and other functions of a website or app while reducing loading time. 
 
 ## Project Set Up
 
@@ -64,7 +65,7 @@ Construct a Single Page Application with React.
 **Your finished project must include all of the following requirements:**
 
 _Display Data from a Server API_
-- [ ]  Fetch a list of characters from the Rick and Morty API's Characters endpoint *`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/`* and render them to the screen. _NOTE: https://cors-anywhere.herokuapp.com/ in front of the actual URL just let's us get around CORS errors that happen on the server._
+- [ ]  Fetch a list of characters from the Rick and Morty API's Characters endpoint *`https://rickandmortyapi.com/api/character/`* and render them to the screen.
 - [ ]  You must display at least one element for each character.
 
 _Add a Router to this application using [React Router](https://reacttraining.com/react-router/web/guides/quick-start)._
