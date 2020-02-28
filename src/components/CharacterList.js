@@ -13,7 +13,7 @@ export default function CharacterList() {
     const getChar = () => {
       axios.get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
       .then(response =>{
-        console.log('MORTY LOOK MORTY DATA: ', response);
+        console.log(' LOOK MORTY DATA: ', response);
         setCharacters(response.data.results)
       })
       .catch(err =>{

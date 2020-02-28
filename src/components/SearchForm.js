@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+
 export default function SearchForm() {
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -7,17 +8,28 @@ export default function SearchForm() {
   const [characters, setCharacters] = useState([]);
 
  
-  const character = () => {
-    axios.get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character')
-    .then(response =>{
-      setCharacters(response.data.results);
-    })
-  }
+  useEffect(() => {
+    // TODO: Add API Request here - must run in `useEffect`
+//  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+const getChar = () => {
+  axios.get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
+  .then(response =>{
+    console.log(' look here dummy: ', response.data.results);
+    setCharacters(response.data.results)
+  })
+  .catch(err =>{
+    console.log('YO DAWG YOU GOT AN ERROR: ', err);
+  });
+  
+}
+
+getChar();
+}, []);
 
   useEffect(() => {
 
     const results = characters.filter(character => 
-      character.toLowerCase().includes(searchTerm.toLowerCase())
+      character.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setSearchResults(results);
   }, [searchTerm]);
@@ -49,3 +61,5 @@ export default function SearchForm() {
     </section>
   );
 }
+
+
