@@ -54,7 +54,7 @@ getChar();
       <div className="character-list">
         <ul>
         {searchResults.map(character => (
-          <li key={character}>{character}</li>
+          <li key={character.name}>Results: {character.name}</li>
         ))}
         </ul>
       </div>
